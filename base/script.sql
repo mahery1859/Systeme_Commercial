@@ -65,7 +65,11 @@ CREATE TABLE proFormat (
     idService varchar REFERENCES service(idService)
 );
 
-
+CREATE TABLE fournisseurs (
+    id serial PRIMARY KEY ,
+    nom_fournisseur VARCHAR(255),
+    contact_responsable VARCHAR(255)
+);
 -- Table pour les bons de commande
 CREATE TABLE bons_de_commande (
     id serial PRIMARY KEY ,
