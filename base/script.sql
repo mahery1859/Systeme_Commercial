@@ -55,20 +55,26 @@ create table if not exists reponse_directeur(
 ); 
 
 
+<<<<<<< HEAD
+=======
+CREATE TABLE fournisseurs (
+    id serial PRIMARY KEY ,
+    nom_fournisseur VARCHAR(255),
+    contact_responsable VARCHAR(255)
+);
+
+>>>>>>> d6bccb383fafa0f0c638c29c09c118b18c87ac99
 CREATE TABLE proFormat (
     id serial PRIMARY KEY ,
     idArticle varchar REFERENCES article(idArticle),
     Quantite float,
     Prix_unitaire float,
     Date DATE,
-    idService varchar REFERENCES service(idService)
+    idService varchar REFERENCES service(idService),
+    id_Fournisseur int  REFERENCES fournisseurs(id)
 );
 
-CREATE TABLE fournisseurs (
-    id serial PRIMARY KEY ,
-    nom_fournisseur VARCHAR(255),
-    contact_responsable VARCHAR(255)
-);
+
 -- Table pour les bons de commande
 CREATE TABLE bons_de_commande (
     id serial PRIMARY KEY ,
