@@ -55,7 +55,6 @@ create table if not exists reponse_directeur(
 ); 
 
 
-
 CREATE TABLE proFormat (
     id serial PRIMARY KEY ,
     idArticle varchar REFERENCES article(idArticle),
