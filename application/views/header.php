@@ -94,7 +94,7 @@
                 <a href="<?php echo site_url("index.php/ServiceController/GetAll");?>">ListService</a>
                 <a href="<?php echo site_url("index.php/ArticleController/index");?>">AjoutArticle</a>
                 <a href="<?php echo site_url("index.php/ArticleController/GetAll");?>">ListArticle</a>
-                <a href="<?php echo site_url("index.php/ArticleController/besoin");?>">Besoin</a>
+                <a href="<?php echo site_url("index.php/BesoinController/index");?>">Besoin</a>
                 <a href="<?php echo site_url("index.php/LoginController/index");?>">Login</a>
             </nav>
         </div>

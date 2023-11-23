@@ -16,8 +16,8 @@
                                         <td><?php echo $besoin['nom_categorie']; ?></td>
                                         <td><?php echo $besoin['nom_service']; ?></td>
                                         <td><?php echo $besoin['date_besoin']; ?></td>
-                                        <td><a href="<?php echo site_url('DirecteurController/CheckYes/'.$besoin['idbesoin']); ?>"><img src="../assets/img/down/check-lg.svg" alt="" srcset=""></a></td>
-                                        <td><a href="<?php echo site_url('DirecteurController/CheckNo/'.$besoin['idbesoin']); ?>"><img src="../assets/img/down/x-lg.svg" alt="" srcset=""></a></td>
+                                        <td><a href="<?php echo site_url('DirecteurController/CheckYes/'.$besoin['idbesoin']); ?>">valider</a></td>
+                                        <td><a href="<?php echo site_url('DirecteurController/CheckNo/'.$besoin['idbesoin']); ?>">Refuser</a></td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
