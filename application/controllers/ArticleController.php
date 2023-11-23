@@ -49,12 +49,6 @@ class ArticleController extends CI_Controller {
 	
 		redirect('ArticleController/GetAll');
 	}
-
-	public function besoin() {
-		$this->load->model('BesoinModel');
-        $status = 'valider';
-        $data['Besoin'] = $this->BesoinModel->getBesoin_confirmer($status); 
-        $this->load->view('besoin/listeBesoin', $data);
-	}		
+	
 }
 ?>
