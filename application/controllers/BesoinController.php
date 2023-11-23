@@ -9,6 +9,7 @@ class BesoinController extends CI_Controller {
 	public function index() {
         $status = 'valider';
         $data['Besoin'] = $this->BesoinModel->getBesoin_confirmer($status); 
+        $this->load->view('header');
         $this->load->view('besoin/listeBesoin', $data);
 	}		
 }

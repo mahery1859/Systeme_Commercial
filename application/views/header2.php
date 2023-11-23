@@ -94,3 +94,4 @@
                 <a href="<?php echo site_url('DirecteurController/Historique');?>">Historique</a>
             </nav>
         </div>
+    </header>

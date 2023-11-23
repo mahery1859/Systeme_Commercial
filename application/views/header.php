@@ -98,3 +98,4 @@
                 <a href="<?php echo site_url("index.php/LoginController/index");?>">Login</a>
             </nav>
         </div>
+    </header>
