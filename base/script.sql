@@ -11,7 +11,7 @@ create table if not exists directeur (
 
 create sequence seq_service;
 create table if not exists service (
-    idService varchar(10) default 'SER'||nextval('seq_service') primary key,
+    idService varchar(10) default 'ser'||nextval('seq_service') primary key,
     nom_service varchar(50),
     bool boolean default false
 );
@@ -64,7 +64,11 @@ CREATE TABLE proFormat (
     idService varchar REFERENCES service(idService)
 );
 
-
+CREATE TABLE fournisseurs (
+    id serial PRIMARY KEY ,
+    nom_fournisseur VARCHAR(255),
+    contact_responsable VARCHAR(255)
+);
 -- Table pour les bons de commande
 CREATE TABLE bons_de_commande (
     id serial PRIMARY KEY ,
