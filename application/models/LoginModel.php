@@ -17,5 +17,13 @@ class LoginModel extends CI_Model {
 
         return $result->row_array();
     }
+    
+    public function checkfournisseur($email, $mdp) {
+        $sql = "select * from fournisseurs where email = '%s' and motdepasse = '%s'";
+        $sql = sprintf($sql, $email, $mdp);
+        $result = $this->db->query($sql);
+
+        return $result->row_array();
+    }
 }       
 ?>

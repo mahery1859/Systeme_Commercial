@@ -30,6 +30,7 @@ class LoginController extends CI_Controller {
         $this->load->model('LoginModel');
         $dirlo = $this->LoginModel->checkDirlo($email, $mdp);
         $chefService = $this->LoginModel->checkChefService($email, $mdp);
+		$fournisseur = $this->LoginModel->checkfournisseur($email, $mdp);
 
         if(count($dirlo) != 0) {
             redirect('DirecteurController/index');
@@ -37,6 +38,10 @@ class LoginController extends CI_Controller {
 			$idService = $chefService['idservice'];
 			$this->session->set_userdata('idService', $idService);
             redirect('ChefServiceController/index');
+        }else if(count($fournisseur) != 0) {
+			$fournisseur = $fournisseur['id'];
+			$this->session->set_userdata('idfournisseur', $fournisseur);
+            redirect('FournisseurController/index');
         } else {
             redirect('index.php/LoginController/index');
         }

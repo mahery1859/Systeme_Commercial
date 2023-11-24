@@ -25,8 +25,8 @@ INSERT INTO article  VALUES
 
 INSERT INTO fournisseurs
 VALUES 
-    (default,'Jumbo Score', 'jumbo@gmail.com'),
-    (default,'U', 'u@gmail.com')
+    (default,'Jumbo Score', 'jumbo@gmail.com','1234'),
+    (default,'U', 'u@gmail.com','1234')
     ;
 
 INSERT INTO courrier_fournisseurs

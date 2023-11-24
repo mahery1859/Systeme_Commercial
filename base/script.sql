@@ -57,7 +57,8 @@ create table if not exists reponse_directeur(
 CREATE TABLE fournisseurs (
     id serial PRIMARY KEY ,
     nom_fournisseur VARCHAR(255),
-    contact_responsable VARCHAR(255)
+    email VARCHAR(255),
+    motdepasse varchar(10)
 );
 CREATE TABLE courrier_fournisseurs (
     id_Fournisseur int  REFERENCES fournisseurs(id),
@@ -69,7 +70,7 @@ CREATE TABLE proFormat (
     id serial PRIMARY KEY ,
     idBesoin VARCHAR references besoin(idBesoin),
     idArticle varchar REFERENCES article(idArticle),
-    Quantite float,nom_fournisseur
+    Quantite float,
     Prix_unitaire float,
     Date DATE,
     id_Fournisseur int  REFERENCES fournisseurs(id)
