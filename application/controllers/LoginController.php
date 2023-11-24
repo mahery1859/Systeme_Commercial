@@ -38,7 +38,7 @@ class LoginController extends CI_Controller {
 			$this->session->set_userdata('idService', $idService);
             redirect('ChefServiceController/index');
         } else {
-            redirect('LoginController/index');
+            redirect('index.php/LoginController/index');
         }
     }
 }

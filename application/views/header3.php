@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Système Commercial - Accueil</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Consolas', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #EEEEEE;
+            border: #17a2b8 solid;
+            height: 100vh;
         }
 
         header {
@@ -96,3 +99,5 @@
             </nav>
         </div>
     </header>
+
+    <div class="bodypart">

@@ -1,0 +1,169 @@
+.bodypart{
+    margin: 100px auto;
+    background-color: #FFF;
+    padding: 40px 50px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 0 20px rgb(186, 186, 186);
+}
+
+/* Apply styles to the form with the class "ajoutService" */
+form.ajoutService {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Apply styles to the div within the form */
+form.ajoutService div {
+    margin-bottom: 15px;
+}
+
+/* Apply styles to the labels within the form */
+form.ajoutService label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Apply styles to the text input fields within the form */
+form.ajoutService input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Apply styles to the submit button within the form */
+form.ajoutService button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Change the background color of the submit button on hover */
+form.ajoutService button:hover {
+    background-color: #45a049;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin-top: 20px; */
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+/* Styles pour les liens d'édition et de suppression */
+.table a {
+    text-decoration: none;
+    color: rgb(4, 160, 199);
+}
+
+.table a img {
+    background-size: contain;
+    margin-right: 5px;
+    width: 20px;
+}
+
+.ajoutarticle {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.ajoutarticle div {
+    margin-bottom: 15px;
+}
+
+.ajoutarticle label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.ajoutarticle input,
+.ajoutarticle select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.ajoutarticle button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.ajoutarticle button:hover {
+    background-color: #45a049;
+}
+
+.login {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login div {
+    margin-bottom: 15px;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 12px;
+    float: right;
+}
+
+.login a:hover {
+    text-decoration: underline;
+}
+
+.login button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #45a049;
+}
