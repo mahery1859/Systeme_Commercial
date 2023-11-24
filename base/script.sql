@@ -42,7 +42,7 @@ create sequence seq_besoin;
 create table if not exists besoin (
     idBesoin varchar(10) default 'BES00' || nextval('seq_besoin') primary key,
     idService varchar(10) references service(idService),
-    idArticle varchar(10) references article(idArticle),
+    idarticle varchar(10) references article(idArticle),
     quantite_demander numeric(10,2) not null,
     date_besoin timestamp
 );
@@ -63,11 +63,11 @@ CREATE TABLE fournisseurs (
 
 CREATE TABLE proFormat (
     id serial PRIMARY KEY ,
+    idBesoin VARCHAR references besoin(idBesoin),
     idArticle varchar REFERENCES article(idArticle),
     Quantite float,
     Prix_unitaire float,
     Date DATE,
-    idService varchar REFERENCES service(idService),
     id_Fournisseur int  REFERENCES fournisseurs(id)
 );
 
@@ -75,9 +75,7 @@ CREATE TABLE proFormat (
 -- Table pour les bons de commande
 CREATE TABLE bons_de_commande (
     id serial PRIMARY KEY ,
-    idArticle varchar REFERENCES article(idArticle),
-    quantite INT,
-    date_commande DATE,
+    idBesoin VARCHAR references besoin(idBesoin),
     Prix_unitaire float,
     id_Fournisseur int  REFERENCES fournisseurs(id),
     TVA float  

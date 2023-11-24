@@ -23,3 +23,20 @@ JOIN article a ON b.idArticle = a.idArticle
 JOIN service s ON b.idService = s.idService;
 
 
+CREATE OR REPLACE VIEW v_proformat AS
+            SELECT
+                mouvm.id AS idproFormat,
+                mouvm.idarticle AS idarticle,
+                p.nom_article AS nom_article,
+                quantite,
+                mouvm.prix_unitaire AS prix_unitaire,
+                date,
+                f.nom_fournisseur AS nom_Fourniseur,
+                f.id_Fournisseur AS id_Fournisseur
+            FROM
+                proformat mouvm
+            JOIN
+                article p ON mouvm.idarticle = p.idarticle
+            JOIN
+                fournisseurs f ON mouvm.id_fournisseur = f.id
+        ;

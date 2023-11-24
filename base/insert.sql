@@ -23,12 +23,19 @@ INSERT INTO article  VALUES
     (default,'Cahier', 'CAT004'),
     (default,'Stylo', 'CAT004');
 
-
+INSERT INTO fournisseurs
+VALUES 
+    (default,'Jumbo Score', 'jumbo@gmail.com'),
+    (default,'U', 'u@gmail.com')
+    ;
 INSERT INTO proFormat
 VALUES 
-    (default,'ART001', 10, 25000, '2023-01-01', 'ser1'),
-    (default,'ART001', 8, 19000, '2023-02-15', 'ser1'),
-    (default,'ART001', 15, 20000, '2023-03-10', 'ser1'),
-    (default,'ART002', 5, 12000, '2023-04-20', 'ser2'),
-    (default,'ART002', 12, 10000, '2023-05-05', 'ser2'),
-    (default,'ART002', 7, 9000, '2023-06-15', 'ser2');
+    (default,'ART001', 10, 25000, '2023-01-01', 1),
+    (default,'ART001', 8, 19000, '2023-02-15', 2),
+    (default,'ART002', 15, 2000000, '2023-03-10',1),
+    (default,'ART002', 5, 1200000, '2023-04-20', 2),
+    (default,'ART003', 12, 2000, '2023-05-05', 1),
+    (default,'ART003', 7, 3000, '2023-06-15', 2),
+    (default,'ART004', 12, 1000, '2023-05-05', 1),
+    (default,'ART004', 7, 900, '2023-06-15', 2)
+    ;
