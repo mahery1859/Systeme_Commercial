@@ -29,7 +29,7 @@
             <td><?php echo $row->prix_unitaire; ?></td>
             <td><?php echo $row->nom_fourniseur; ?></td>
             <td><?php echo $row->date; ?></td>
-            <td><input type="submit" name="Acheter"></td>
+            <td><input type="submit" value="Demander proFormat"></td>
             <!-- Ajoutez d'autres colonnes en fonction de votre table -->
         </tr>
     <?php endforeach; ?>

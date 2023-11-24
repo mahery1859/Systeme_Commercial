@@ -17,7 +17,7 @@
                                             <td><?php echo $row->nom_article; ?></td>
                                             <td><?php echo $row->quantite_demander; ?></td>
                                             <td><?php echo $row->date_besoin; ?></td>
-                                            <td><a href="<?php echo site_url('ProFormatController/index?idarticle='. $row->idarticle);?>">Générer proFormat</a></td>
+                                            <td><a href="<?php echo site_url('ProFormatController/index?idbesoin='. $row->idbesoin);?>">DemanderProFormat</a></td>
                                         </tr>
                                     <?php } 
                                 ?>

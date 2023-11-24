@@ -5,14 +5,23 @@ class ProFormatController extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->Model('crudModel');
+        $this->load->model('ProFormatModel');
+        $this->load->model('FournisseurModel');
         
     }
 	public function index() {
-        $idProduit = $this->input->get('idarticle');
-        $this->load->model('ProFormatModel');
-        $data['proFormat'] = $this->ProFormatModel->getProFormat_byidProduit($idProduit); 
-        $this->load->view('header');
-        $this->load->view('proFormat/proFormat_view', $data);
+        $table='courrier_fournisseurs';
+        $idf=$this->FournisseurModel->getAllid();
+
+        foreach($idf as $row) {
+            $data = array(
+                'id_fournisseur' => $row->id,
+                'details' => $this->input->get('idbesoin')
+            );
+        $this->crudModel->insert_data($data,$table);
+        }
+        
+        redirect('Welcome');
 	}	
     public function Bon_Commande(){
         $table = 'bons_de_commande';

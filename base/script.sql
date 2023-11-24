@@ -54,32 +54,31 @@ create table if not exists reponse_directeur(
     idBesoin varchar(10) references besoin(idBesoin)
 ); 
 
-
-<<<<<<< HEAD
-=======
 CREATE TABLE fournisseurs (
     id serial PRIMARY KEY ,
     nom_fournisseur VARCHAR(255),
     contact_responsable VARCHAR(255)
 );
+CREATE TABLE courrier_fournisseurs (
+    id_Fournisseur int  REFERENCES fournisseurs(id),
+    details varchar(255)
+);
 
->>>>>>> d6bccb383fafa0f0c638c29c09c118b18c87ac99
+
 CREATE TABLE proFormat (
     id serial PRIMARY KEY ,
     idBesoin VARCHAR references besoin(idBesoin),
     idArticle varchar REFERENCES article(idArticle),
-    Quantite float,
+    Quantite float,nom_fournisseur
     Prix_unitaire float,
     Date DATE,
     id_Fournisseur int  REFERENCES fournisseurs(id)
 );
 
-
 -- Table pour les bons de commande
 CREATE TABLE bons_de_commande (
     id serial PRIMARY KEY ,
     idBesoin VARCHAR references besoin(idBesoin),
-    Prix_unitaire float,
     id_Fournisseur int  REFERENCES fournisseurs(id),
     TVA float  
 );

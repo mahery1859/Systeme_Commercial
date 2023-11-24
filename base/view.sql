@@ -16,7 +16,7 @@ select dem.*, repDir.date_reponse, repDir.reponse
     join v_demandeAchat as dem on dem.idbesoin = repDir.idbesoin;
 
 CREATE OR REPLACE VIEW v_besoinConfirmer AS
-SELECT b.idBesoin, b.idService, b.idArticle, b.quantite_demander, b.date_besoin, r.reponse, r.date_reponse,a.nom_article,s.nom_service
+SELECT b.idBesoin as idBesoin, b.idService, b.idArticle, b.quantite_demander, b.date_besoin, r.reponse, r.date_reponse,a.nom_article,s.nom_service
 FROM reponse_directeur r
 JOIN besoin b ON b.idBesoin = r.idBesoin
 JOIN article a ON b.idArticle = a.idArticle
@@ -27,16 +27,19 @@ CREATE OR REPLACE VIEW v_proformat AS
             SELECT
                 mouvm.id AS idproFormat,
                 mouvm.idarticle AS idarticle,
+                mouvm.idBesoin AS idBesoin,
                 p.nom_article AS nom_article,
                 quantite,
                 mouvm.prix_unitaire AS prix_unitaire,
                 date,
                 f.nom_fournisseur AS nom_Fourniseur,
-                f.id_Fournisseur AS id_Fournisseur
+                f.id AS id_Fournisseur
             FROM
                 proformat mouvm
             JOIN
                 article p ON mouvm.idarticle = p.idarticle
             JOIN
                 fournisseurs f ON mouvm.id_fournisseur = f.id
+            JOIN
+                besoin b ON mouvm.idBesoin = b.idBesoin
         ;
