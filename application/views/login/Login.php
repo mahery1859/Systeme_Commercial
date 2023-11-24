@@ -1,6 +1,7 @@
-<form action="<?php echo site_url('LoginController/Login'); ?>" method="POST">
+<form action="<?php echo site_url('LoginController/Login'); ?>" method="POST" class="login">
                 <div class="mb-3">
-                  <label >Email</label>
+                  <h3>Login Form :</h3>
+                  <p>Email :</p>
                   <input
                     type="text"
                     name="email"
@@ -10,7 +11,7 @@
                 </div>
                 <div >
                   <div >
-                    <label>Password</label>
+                    <p>Password :</p>
                     <a href="auth-forgot-password-basic.html">
                       <small>Forgot Password?</small>
                     </a>
@@ -30,3 +31,5 @@
                   <button type="submit">Sign in</button>
                 </div>
               </form>
+
+</div>              

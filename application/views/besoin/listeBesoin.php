@@ -1,3 +1,5 @@
+<h2>Liste des besoins :</h2>
+
 <table class="table">
                                 <thead class="table-light">
                                     <tr>
@@ -21,3 +23,5 @@
                                 ?>
                                 </tbody>
                             </table>
+
+</div>
