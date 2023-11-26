@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/dist/css/bootstrap.css"); ?>">
+    <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/dist/css/bootstrap.min.css"); ?>">
+    <link rel="stylesheet" href="<?php echo site_url("assets/bootstrap/dist/css/bootstrap-theme.min.css"); ?>">
+
     <title>Système Commercial - Accueil</title>
     <style>
         body {
@@ -96,6 +100,7 @@
             <nav>
                 <a href="<?php echo site_url('DirecteurController/index');?>">ValidationBesoin</a>
                 <a href="<?php echo site_url('DirecteurController/Historique');?>">Historique</a>
+                <a href="<?php echo site_url('DirecteurController/AddDepart');?>">Ajout departement</a>
             </nav>
         </div>
     </header>

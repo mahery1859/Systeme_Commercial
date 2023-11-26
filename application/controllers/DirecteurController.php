@@ -20,7 +20,7 @@ class DirecteurController extends CI_Controller {
 	 */
 	public function index () {
 		$this->load->model('DirecteurModel');
-		$data['besoins'] = $this->DirecteurModel->findall();
+		// $data['besoins'] = $this->DirecteurModel->findall();
 		$this->load->view('header2');
 		$this->load->view('directeur/Accueil', $data);
 	}	
@@ -46,6 +46,11 @@ class DirecteurController extends CI_Controller {
 		$data['historiques'] = $this->DirecteurModel->history();
 		$this->load->view('header2');
 		$this->load->view('directeur/Historique', $data);
+	}
+
+	function AddDepart() {
+		$this->load->view('header2');
+		$this->load->view('directeur/AjoutDepartView');
 	}
 }
 ?>
