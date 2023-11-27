@@ -13,9 +13,11 @@ class crudModel extends CI_Model {
 
     public function delete_data($id,$Table)
     {
-    $this->db->where('id', $id);
-    $this->db->delete($Table);
-    return $this->db->affected_rows() > 0;
+
+            $sql = "delete from %s where id = '%s' " ;
+            $sql = sprintf($sql, $Table,$id);
+           // $this->db->query($sql);
+            return $sql;
 
     }
 

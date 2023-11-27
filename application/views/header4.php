@@ -93,12 +93,16 @@
         <div class="container">
             <a class="logo" href="#">Système Commercial</a>
             <nav>
-                <a href="<?php echo site_url("index.php/ServiceController/index");?>">AjoutService</a>
-                <a href="<?php echo site_url("index.php/ServiceController/GetAll");?>">ListService</a>
-                <a href="<?php echo site_url("index.php/ArticleController/index");?>">AjoutArticle</a>
-                <a href="<?php echo site_url("index.php/ArticleController/GetAll");?>">ListArticle</a>
-                <a href="<?php echo site_url("index.php/LoginController/index");?>">Login</a>
+                <a href="<?php echo site_url('FinanceController/index');?>">Accueil</a>
+                <a href="<?php echo site_url('FinanceController/historique');?>">Historique</a>
             </nav>
+            <style>
+    .erreur{
+    color: red;
+    font-weight: 400;
+    font-family: consolas;
+    }
+</style>
         </div>
     </header>
 

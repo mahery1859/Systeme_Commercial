@@ -9,32 +9,64 @@ class ProFormatController extends CI_Controller {
         $this->load->model('FournisseurModel');
         
     }
+
 	public function index() {
         $table='courrier_fournisseurs';
         $idf=$this->FournisseurModel->getAllid();
-
+        $idbesoin = $this->input->get('idbesoin');
+        $exbesoin = $this->checkifexiste($idbesoin);
+        var_dump($exbesoin);
+        if($exbesoin == true) {
+            redirect('BesoinController/index?erreur');
+            return;
+        }
         foreach($idf as $row) {
             $data = array(
                 'id_fournisseur' => $row->id,
-                'details' => $this->input->get('idbesoin')
+                'details' => $idbesoin
             );
         $this->crudModel->insert_data($data,$table);
         }
         
-        redirect('Welcome');
+        redirect('BesoinController/index');
 	}	
+
+    public function checkifexiste($idbesoin){
+        $sql = "select details from courrier_fournisseurs";
+        $result = $this->db->query($sql);
+        $val = $result->result();
+        foreach ($val as $row) {
+            if ($row->details == $idbesoin){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function getproformat(){
+        $idservice = $this->session->userdata('idService');
+        $idbesoin = $this->input->get('idbesoin');
+        $data['proformat'] = $this->ProFormatModel->getproformat_byidservice($idservice,$idbesoin);
+        $this->load->view('header3');
+        $this->load->view('proformat/proFormat_view',$data);
+    }
+    
     public function Bon_Commande(){
         $table = 'bons_de_commande';
+        $idservice = $this->session->userdata('idService');
+        $idbesoin = $this->input->get('idbesoin');
+        $idf = $this->ProFormatModel->getProFormat_byidProduit($idservice,$idbesoin); 
+        foreach ($idf as $row){
         $data = array(
-            'id_Produit' => $this->input->get('idarticle'),
-            'quantite' => $this->input->get('quantite'),
-            'date_commande' => $this->input->get('date_commande'),
-            'Prix_unitaire' => $this->input->get('Prix_unitaire'),
-            'id_Fournisseur' => $this->input->get('id_Fournisseur'),
-            'TVA' => 20
+            'idbesoin' => $row->idbesoin,
+            'id_fournisseur' => $row->id_fournisseur,
+            'prix_unitaire' => $row->prix_unitaire,
+            'tva' => 20,
+            'date' => $row->date,
         );
+    }
         $this->crudModel->insert_data($data, $table);
-            redirect('index.php/Welcome');
-    }	
+            redirect('BesoinController');
+    }
 }
 ?>

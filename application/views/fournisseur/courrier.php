@@ -3,17 +3,19 @@
 <table class="table">
                                 <thead class="table-light">
                                     <tr>
-                                        <th>id_Fournisseur</th>
-                                        <th>Details</th>
+                                        <th>Departement</th>
+                                        <th>Article</th>
+                                        <th>Quantite</th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
                                 <?php
                                     foreach ($courrier as $row) { ?>
                                         <tr>
-                                            <td><strong><?php echo $row->id_fournisseur; ?></strong></td>
-                                            <td><?php echo $row->details; ?></td>
-                                            <td><a href="<?php echo null;// echo site_url('ProFormatController/index?idbesoin='. $row->idbesoin);?>">Ajouter Un proFormat</a></td>
+                                            <td><strong><?php echo $row->nom_service; ?></strong></td>
+                                            <td><?php echo $row->nom_article; ?></td>
+                                            <td><?php echo $row->quantite_demander; ?></td>
+                                            <td><a href="<?php  echo site_url('FournisseurController/issertproFormat?idfournisseur='. $row->id_fournisseur. '& idbesoin='. $row->details);?>">Details</a></td>
                                         </tr>
                                     <?php } 
                                 ?>

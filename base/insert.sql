@@ -35,3 +35,8 @@ VALUES
     (default,2)
     ;
 
+INSERT INTO finance
+VALUES 
+    (default,999999999, 'finance@gmail.com','1234')
+    ;
+

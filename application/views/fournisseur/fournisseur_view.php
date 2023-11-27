@@ -7,6 +7,5 @@
 </head>
 <body>
     <h2>bienvenue fournisseur <?php echo $this->session->userdata('idfournisseur');?></h2>
-    <a href="<?php echo site_url('FournisseurController/courrier');?>">Courrier</a>
 </body>
 </html>

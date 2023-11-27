@@ -93,10 +93,18 @@
         <div class="container">
             <a class="logo" href="#">Système Commercial</a>
             <nav>
-                <a href="<?php echo site_url('ChefServiceController/index');?>">Accueil</a>
+                <a href="<?php echo site_url('BesoinController/index');?>">Accueil</a>
                 <a href="<?php echo site_url('ChefServiceController/Add');?>">ajout</a>
                 <a href="<?php echo site_url('ChefServiceController/DemandeAff');?>">Demande</a>
+                <a href="<?php echo site_url('BoncommandeController/index');?>">Bon_de_Commande</a>
             </nav>
+            <style>
+    .erreur{
+    color: red;
+    font-weight: 400;
+    font-family: consolas;
+    }
+</style>
         </div>
     </header>
 

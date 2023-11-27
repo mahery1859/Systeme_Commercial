@@ -9,7 +9,7 @@ class FournisseurModel extends CI_Model {
     }
 
 public function getcourrier_fournisseur($idfournisseur){
-    $sql = "select * from courrier_fournisseurs where id_fournisseur = '%s'";
+    $sql = "select * from v_courrier_fournisseurs where id_fournisseur = '%s'";
     $sql = sprintf($sql, $idfournisseur);
     $result = $this->db->query($sql);
     return $result->result();

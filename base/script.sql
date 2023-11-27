@@ -62,15 +62,14 @@ CREATE TABLE fournisseurs (
 );
 CREATE TABLE courrier_fournisseurs (
     id_Fournisseur int  REFERENCES fournisseurs(id),
-    details varchar(255)
+    details varchar(10) references besoin(idBesoin)
 );
 
 
-CREATE TABLE proFormat (
+CREATE TABLE  proFormat (
     id serial PRIMARY KEY ,
     idBesoin VARCHAR references besoin(idBesoin),
     idArticle varchar REFERENCES article(idArticle),
-    Quantite float,
     Prix_unitaire float,
     Date DATE,
     id_Fournisseur int  REFERENCES fournisseurs(id)
@@ -79,13 +78,32 @@ CREATE TABLE proFormat (
 -- Table pour les bons de commande
 CREATE TABLE bons_de_commande (
     id serial PRIMARY KEY ,
-    idBesoin VARCHAR references besoin(idBesoin),
+    idBesoin VARCHAR references besoin(idBesoin) unique,
     id_Fournisseur int  REFERENCES fournisseurs(id),
+    prix_unitaire float,
+    date Date,
     TVA float  
 );
 
 CREATE TABLE FactureAttente (
     id serial PRIMARY KEY ,
-    id_Facture INT REFERENCES bons_de_commande(id),
+    id_Facture INT REFERENCES bons_de_commande(id) unique,
     PrixTTC FLOAT
 );
+CREATE TABLE finance(
+    id serial PRIMARY key,
+    Capitale float,
+    email varchar(50),
+    motdepasse varchar(10)
+);
+
+CREATE TABLE ValidationBon(
+    id_Facture int REFERENCES bons_de_commande(id) unique,
+    validation int
+);
+CREATE TABLE HistoriqueFinance(
+     id serial PRIMARY KEY ,
+    id_Facture INT REFERENCES bons_de_commande(id) unique,
+    PrixTTC FLOAT
+);
+
