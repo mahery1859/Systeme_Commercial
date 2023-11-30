@@ -28,7 +28,7 @@ class ChefServiceController extends CI_Controller {
     public function Add() {
         $this->load->model('ServiceModel');
         $data['services'] = $this->ServiceModel->findall();
-		$this->load->view('header3');
+		$this->load->view('header2');
         $this->load->view('chefService/Ajout', $data);
     }
 

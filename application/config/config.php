@@ -65,7 +65,6 @@ $config['uri_protocol']	= 'REQUEST_URI';
 | https://codeigniter.com/user_guide/general/urls.html
 */
 $config['url_suffix'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Default Language
@@ -511,3 +510,9 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+$config['protocol'] = 'smtp';
+$config['smtp_host'] = 'ssl://smtp.gmail.com';
+$config['smtp_port'] = 465;
+$config['smtp_user'] = 'bamasetra3@gmail.com';
+$config['smtp_pass'] = 'tyknsfzsjuexfoqm';

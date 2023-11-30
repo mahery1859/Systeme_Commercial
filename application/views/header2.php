@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
     <title>Système Commercial - Accueil</title>
     <style>
         body {
@@ -93,11 +92,14 @@
     <header>
         <div class="container">
             <a class="logo" href="#">Système Commercial</a>
-            <nav>
+            <nav>            
+                <a href="<?php echo site_url('ChefServiceController/Add');?>">ajout</a>
+                <a href="<?php echo site_url("index.php/ServiceController/index");?>">AjoutService</a>
+                <a href="<?php echo site_url("index.php/ServiceController/GetAll");?>">ListService</a>
                 <a href="<?php echo site_url('DirecteurController/index');?>">ValidationBesoin</a>
                 <a href="<?php echo site_url('DirecteurController/Historique');?>">Historique</a>
             </nav>
         </div>
     </header>
-
+    <br><br><br>
     <div class="bodypart">

@@ -33,6 +33,7 @@ class FournisseurController extends CI_Controller {
         );
 
         $this->crudModel->insert_data($data,$table);
+        $this->envoyer_emails($idbesoin,$idfournisseur);
         redirect('FournisseurController/index');
        }
 
@@ -42,6 +43,41 @@ class FournisseurController extends CI_Controller {
         $this->load->view('headerfour');
         $this->load->view('fournisseur/insertProFormat',$data);
        }
+
+
+       public function envoyer_emails($idbesoin,$idfournisseur) {
+        // Load the CodeIgniter Email library
+        $this->load->library('email');
+        
+        // Set the timezone
+        date_default_timezone_set('Indian/Antananarivo');
+        
+        // Configure Email library settings
+        $this->email->initialize(array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'bamasetra3@gmail.com',
+            'smtp_pass' => 'tyknsfzsjuexfoqm', // Use your actual Gmail password
+            'smtp_crypto' => 'ssl',
+            'mailtype' => 'html',
+            'charset' => 'utf-8',
+            'newline' => "\r\n"
+        ));
+
+        $this->email->from('bamasetra3@gmail.com', 'mahery');
+        $this->email->to('vioartvidoc@gmail.com');
+        $sujet = $idfournisseur + $idbesoin;
+        $this->email->subject($sujet);
+        $this->email->message('Contenu de l\'e-mail');
+        
+        if ($this->email->send()) {
+            redirect('FournisseurController/index');
+        } else {
+            show_error($this->email->print_debugger());
+        }
+        
+            }
 
 
 }

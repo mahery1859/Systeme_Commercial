@@ -1,3 +1,31 @@
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+    }
+
+    .table a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .table a:hover {
+        text-decoration: underline;
+    }
+</style>
+
 <h2>Liste des besoins :</h2>
 
 <table class="table">

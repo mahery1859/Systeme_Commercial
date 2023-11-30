@@ -77,7 +77,7 @@ $db['default'] = array(
 	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=commerce',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
-	'password' => 'postgres',
+	'password' => 'root',
 	'database' => 'commerce',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',

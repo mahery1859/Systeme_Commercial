@@ -19,7 +19,7 @@ class ServiceController extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index () {
-        $this->load->view('header');
+        $this->load->view('header2');
 		$this->load->view('service/AjoutService');
 	}		
 
@@ -38,14 +38,14 @@ class ServiceController extends CI_Controller {
     public function GetAll() {
         $this->load->model('ServiceModel');
         $data['services'] = $this->ServiceModel->findall();
-        $this->load->view('header');
+        $this->load->view('header2');
         $this->load->view('service/ListeService', $data);        
     }
 
     public function Modifier($idService) {
         $this->load->model('ServiceModel');
         $data['nom'] = $this->ServiceModel->findById($idService);
-        $this->load->view('header');
+        $this->load->view('header2');
         $this->load->view('service/ModifierService', $data);
     }
 

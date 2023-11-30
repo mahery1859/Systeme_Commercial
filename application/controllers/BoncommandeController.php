@@ -19,9 +19,11 @@ class BoncommandeController extends CI_Controller {
         $idboncommande = $this->input->get('idboncommande');
         $data['Message']  = $this->BoncommandeModel-> get_ok($idboncommande);
         $data['facture'] = $this->BoncommandeModel->getBonCommandeid($idboncommande); 
+        $data['boncommande'] = $this->input->get('idboncommande');
             $this->load->view('header3');
            $this->load->view('boncommande/FactureBonCommande', $data);
     }
+
     public function envoyerbon(){
         $idFacture = $this->input->get('idFacture');
         $prixttc = $this->input->get('prixttc');
